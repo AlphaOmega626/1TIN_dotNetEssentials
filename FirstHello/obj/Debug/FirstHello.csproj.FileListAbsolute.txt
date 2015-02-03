@@ -1,0 +1,1 @@
+C:\dotNet\FirstHello\bin\Debug\FirstHello.exe.config
