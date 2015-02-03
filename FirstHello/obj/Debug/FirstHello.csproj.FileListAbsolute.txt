@@ -1,1 +1,13 @@
 C:\dotNet\FirstHello\bin\Debug\FirstHello.exe.config
+C:\dotNet\FirstHello\bin\Debug\FirstHello.exe
+C:\dotNet\FirstHello\bin\Debug\FirstHello.pdb
+C:\dotNet\FirstHello\obj\Debug\FirstHello.csprojResolveAssemblyReference.cache
+C:\dotNet\FirstHello\obj\Debug\MainWindow.baml
+C:\dotNet\FirstHello\obj\Debug\MainWindow.g.cs
+C:\dotNet\FirstHello\obj\Debug\App.g.cs
+C:\dotNet\FirstHello\obj\Debug\FirstHello_MarkupCompile.cache
+C:\dotNet\FirstHello\obj\Debug\FirstHello.g.resources
+C:\dotNet\FirstHello\obj\Debug\FirstHello.Properties.Resources.resources
+C:\dotNet\FirstHello\obj\Debug\FirstHello.csproj.GenerateResource.Cache
+C:\dotNet\FirstHello\obj\Debug\FirstHello.exe
+C:\dotNet\FirstHello\obj\Debug\FirstHello.pdb

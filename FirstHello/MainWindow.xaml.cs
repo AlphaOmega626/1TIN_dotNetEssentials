@@ -24,5 +24,10 @@ namespace FirstHello
         {
             InitializeComponent();
         }
+
+        private void ClickHandler(object sender, RoutedEventArgs e)
+        {
+            naamLabel.Content = "Frankie";
+        }
     }
 }

@@ -1,8 +1,11 @@
 ﻿<Window x:Class="FirstHello.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="First Hello" Height="180" Width="300" Background="#FF424242">
     <Grid>
-        
+        <Label x:Name="naamLabel" Content="Hello" HorizontalAlignment="Left" Margin="46,80,0,0" VerticalAlignment="Top" Height="30" Background="Red" Width="75" FontFamily="Times New Roman"/>
+        <Button Content="Knop" Click="ClickHandler" HorizontalAlignment="Left" Margin="112,34,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock x:Name="leeftijdText" Text="18 jaar" HorizontalAlignment="Left" Margin="177,80,0,0" VerticalAlignment="Top" Height="30" Background="#FFF1FF00" Width="75" FontFamily="Times New Roman"/>
+
     </Grid>
 </Window>
