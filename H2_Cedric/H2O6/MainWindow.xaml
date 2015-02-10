@@ -6,7 +6,10 @@
         <Label x:Name="lblA" Content="_Naam: " HorizontalAlignment="Left" Margin="80,120,0,0" VerticalAlignment="Top"
                Target="{Binding ElementName=txtA}" />
         <TextBox x:Name="txtA" HorizontalAlignment="Left" Height="23" Margin="153,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152"/>
-        <TextBlock x:Name="txtB" HorizontalAlignment="Left" Margin="80,197,0,0" TextWrapping="Wrap" Text="Dit is een textblock" VerticalAlignment="Top" Background="#FF35E202"/>
+        <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Margin="80,197,0,0" TextWrapping="Wrap" Text="Dit is een textblock" VerticalAlignment="Top" Background="#FF35E202"/>
+        <Label x:Name="lblB" Content="_Naam2: " HorizontalAlignment="Left" Margin="80,148,0,0" VerticalAlignment="Top"
+        	Target="{Binding ElementName=txtB}" />
+        <TextBox x:Name="txtB" HorizontalAlignment="Left" Height="23" Margin="153,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="152"/>
 
     </Grid>
 </Window>
