@@ -1,0 +1,22 @@
+﻿<Window x:Class="H4Oef9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="760.821">
+    <Grid>
+        <Label x:Name="bedragLabel" Content="Uw _bedrag in centen" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="235" Background="#FF00B9FF" FontFamily="Verdana" FontSize="15" Target="{Binding ElementName=bedragTextBox}" />
+        <TextBox x:Name="bedragTextBox" HorizontalAlignment="Left" Height="35" Margin="299,16,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="208"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,127,0,0" TextWrapping="Wrap" Text="0.Cola: 50 Cent&#x0a;1.Fanta: 50 Cent&#x0a;2.Water: 30 Cent" VerticalAlignment="Top" Height="182" Width="235" Background="#FF00B9FF"/>
+        <Button x:Name="bedragButton" Content="Wisselgeld" HorizontalAlignment="Left" Margin="342,264,0,0" VerticalAlignment="Top" Width="165" Click="bedragButton_Click"/>
+        <Button x:Name="exitButton" Content="Exit" HorizontalAlignment="Left" Margin="342,289,0,0" VerticalAlignment="Top" Width="165" Click="exitButton_Click"/>
+        <TextBox x:Name="keuzeTextBox" HorizontalAlignment="Left" Height="35" Margin="299,68,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="208"/>
+        <Label x:Name="keuzeLabel" Content="Het _nummer van uw keuze:" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Height="35" Width="235" Background="#FF00B9FF" FontFamily="Verdana" FontSize="15" Target="{Binding ElementName=keuzeTextBox}" />
+        <Label x:Name="euroLabel" Content="The number of 1 euro coins is " HorizontalAlignment="Left" Margin="533,16,0,0" VerticalAlignment="Top" Height="29" Width="204"  />
+        <Label x:Name="cent50Label" Content="The number of 50 cent coins is " HorizontalAlignment="Left" Margin="533,50,0,0" VerticalAlignment="Top" Height="29" Width="204"/>
+        <Label x:Name="cent20Label" Content="The number of 20 cent coins is " HorizontalAlignment="Left" Margin="533,84,0,0" VerticalAlignment="Top" Height="29" Width="204"/>
+        <Label x:Name="cent10Label" Content="The number of 10 cent coins is " HorizontalAlignment="Left" Margin="533,118,0,0" VerticalAlignment="Top" Height="29" Width="204"/>
+        <Label x:Name="cent5Label" Content="The number of 5 cent coins is " HorizontalAlignment="Left" Margin="533,152,0,0" VerticalAlignment="Top" Height="29" Width="204"/>
+        <Label x:Name="cent2Label" Content="The number of 2 cent coins is " HorizontalAlignment="Left" Margin="533,186,0,0" VerticalAlignment="Top" Height="29" Width="204"/>
+        <Label x:Name="cent1Label" Content="The number of 1 cent coins is " HorizontalAlignment="Left" Margin="533,220,0,0" VerticalAlignment="Top" Height="29" Width="204"/>
+
+    </Grid>
+</Window>
