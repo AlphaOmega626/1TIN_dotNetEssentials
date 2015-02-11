@@ -1,0 +1,27 @@
+﻿<Window x:Class="Oef9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="421.2" Width="528.821">
+    <Grid>
+        <Label x:Name="bedragLabel" Content="Centen:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="235" Background="#888" FontFamily="Verdana" FontSize="15" Target="{Binding ElementName=bedragTextBox}" />
+        <TextBox x:Name="bedragTextBox" HorizontalAlignment="Left" Height="35" Margin="299,16,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="208"/>
+        <Button x:Name="bedragButton" Content="Bereken" HorizontalAlignment="Left" Margin="299,128,0,0" VerticalAlignment="Top" Width="208" Click="bedragButton_Click" Height="233"/>
+        <TextBox x:Name="keuzeTextBox" HorizontalAlignment="Left" Height="35" Margin="299,68,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="208"/>
+        <Label x:Name="keuzeLabel" Content="Prijs Artikel:" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Height="35" Width="235" Background="#888" FontFamily="Verdana" FontSize="15" Target="{Binding ElementName=keuzeTextBox}" />
+        <Label x:Name="euroLabel" Content="" HorizontalAlignment="Left" Margin="137,128,0,0" VerticalAlignment="Top" Height="29" Width="96"  />
+        <Label x:Name="cent50Label" Content="" HorizontalAlignment="Left" Margin="137,162,0,0" VerticalAlignment="Top" Height="29" Width="96"/>
+        <Label x:Name="cent20Label" Content="" HorizontalAlignment="Left" Margin="137,196,0,0" VerticalAlignment="Top" Height="29" Width="96"/>
+        <Label x:Name="cent10Label" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="137,230,0,0" VerticalAlignment="Top" Height="29" Width="96"/>
+        <Label x:Name="cent5Label" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="137,264,0,0" VerticalAlignment="Top" Height="29" Width="96"/>
+        <Label x:Name="cent2Label" Content="" HorizontalAlignment="Left" Margin="137,298,0,0" VerticalAlignment="Top" Height="29" Width="96"/>
+        <Label x:Name="cent1Label" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="137,332,0,0" VerticalAlignment="Top" Height="29" Width="96"/>
+        <Label x:Name="euroLabel_Copy" Content="1 euro stukken:" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Height="29" Width="127"  />
+        <Label x:Name="cent50Label_Copy" Content="50 euro cent stukken:" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top" Height="29" Width="127"/>
+        <Label x:Name="cent20Label_Copy" Content="20 euro cent stukken:" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Height="29" Width="127"/>
+        <Label x:Name="cent10Label_Copy" Content="10 eurocent stukken:" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Height="29" Width="127"/>
+        <Label x:Name="cent5Label_Copy" Content="5 eurocent stukken:" HorizontalAlignment="Left" Margin="10,264,0,0" VerticalAlignment="Top" Height="29" Width="127"/>
+        <Label x:Name="cent2Label_Copy" Content="2 eurocent stukken:" HorizontalAlignment="Left" Margin="10,298,0,0" VerticalAlignment="Top" Height="29" Width="127"/>
+        <Label x:Name="cent1Label_Copy" Content="1 eurocent stukken:" HorizontalAlignment="Left" Margin="10,332,0,0" VerticalAlignment="Top" Height="29" Width="127"/>
+
+    </Grid>
+</Window>

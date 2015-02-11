@@ -22,7 +22,9 @@ namespace WpfApplication1
     {
         Ellipse gezicht = new Ellipse();
         Ellipse linkerOog = new Ellipse();
-        
+        Ellipse rechterOog = new Ellipse();
+        Ellipse neus = new Ellipse();
+        Ellipse mond = new Ellipse();
         
 
         public MainWindow()
@@ -40,13 +42,34 @@ namespace WpfApplication1
             linkerOog.Margin = new Thickness(130, 50, 0, 0);
             linkerOog.Stroke = new SolidColorBrush(Colors.Blue);
             linkerOog.Fill = new SolidColorBrush(Colors.DarkBlue);
-            
+
+            rechterOog.Width = 15;
+            rechterOog.Height = 15;
+            rechterOog.Margin = new Thickness(170, 50, 0, 0);
+            rechterOog.Stroke = new SolidColorBrush(Colors.Blue);
+            rechterOog.Fill = new SolidColorBrush(Colors.DarkBlue);
+
+            neus.Width = 10;
+            neus.Height = 10;
+            neus.Margin = new Thickness(153, 70, 0, 0);
+            neus.Stroke = new SolidColorBrush(Colors.DeepPink);
+            neus.Fill = new SolidColorBrush(Colors.HotPink);
+
+            mond.Width = 25;
+            mond.Height = 25;
+            mond.Margin = new Thickness(145, 100, 0, 0);
+            mond.Stroke = new SolidColorBrush(Colors.Black);
+            mond.Fill = new SolidColorBrush(Colors.Black);
+
         }
 
         private void ClickHandler(object sender, RoutedEventArgs e)
         {
             tekenCanvas.Children.Add(gezicht);
             tekenCanvas.Children.Add(linkerOog);
+            tekenCanvas.Children.Add(rechterOog);
+            tekenCanvas.Children.Add(neus);
+            tekenCanvas.Children.Add(mond);
         }
     }
 }
