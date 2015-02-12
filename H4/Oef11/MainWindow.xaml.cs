@@ -27,11 +27,23 @@ namespace Oef11
 
         private void berekenButton_Click(object sender, RoutedEventArgs e)
         {
-            int getal = Convert.ToInt32(getalTextBox.Text);
-            String binary = Convert.ToString(getal, 2);
-        }
-
-
+            int getal;
+            if (int.TryParse(getalTextBox.Text, out getal))
+            {
+                if (getal < 0 || getal > 255)
+                {
+                    MessageBox.Show("Het ingegeven getal ligt niet tussen 0 en 255!");
+                }
+                else
+                {
+                    String binary = Convert.ToString(getal, 2);
+                    binairTextbox.Text = binary;
+                }
+            }
+            else
+            {
+                MessageBox.Show("U hebt geen getal ingegeven!");
+            }
 
         }
     }
