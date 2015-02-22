@@ -1,0 +1,13 @@
+﻿<Window x:Class="Oef02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="227,73,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="voornaamTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="227,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="achternaamTextBox"/>
+        <Label Content="Voornaam:" HorizontalAlignment="Left" Margin="128,73,0,0" VerticalAlignment="Top" Target="{Binding ElementName=voornaamTextBox}"/>
+        <Label Content="Achternaam:" HorizontalAlignment="Left" Margin="128,114,0,0" VerticalAlignment="Top" Target="{Binding ElementName=achternaamTextBox}"/>
+        <Button Content="Show" HorizontalAlignment="Left" Margin="128,164,0,0" VerticalAlignment="Top" Width="219" Height="30" Click="Button_Click"/>
+
+    </Grid>
+</Window>
