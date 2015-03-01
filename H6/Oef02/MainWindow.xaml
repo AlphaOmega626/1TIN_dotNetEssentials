@@ -1,0 +1,9 @@
+﻿<Window x:Class="Oef02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350.777" Width="628.33">
+    <Grid Margin="0,0,0.333,-28.667">
+        <Canvas HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="600" Background="LightGray" Name="paperCanvas"/>
+
+    </Grid>
+</Window>
