@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Oef07.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="419.146" Width="406.132">
+        Title="Calculator" Height="419.146" Width="284.799">
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="71" Margin="14,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252" Name="calcTextBox" Background="LightGray"  FontWeight="Bold" FontSize="40" TextAlignment="Right" />
         <Button Content="1" HorizontalAlignment="Left" Margin="14,89,0,0" VerticalAlignment="Top" Width="58" Height="58" FontWeight="Bold" FontSize="25" Click="Button_Click" Name="oneButton"/>
@@ -18,6 +18,5 @@
         <Button Content="+" HorizontalAlignment="Left" Margin="207,89,0,0" VerticalAlignment="Top" Width="58" Height="58" FontWeight="Bold" FontSize="25" Click="Button_Click" Name="addButton"/>
         <Button Content="-" HorizontalAlignment="Left" Margin="207,159,0,0" VerticalAlignment="Top" Width="58" Height="58" FontWeight="Bold" FontSize="25" Click="Button_Click" Name="subtractButton"/>
         <Button Content="=" HorizontalAlignment="Left" Margin="207,230,0,0" VerticalAlignment="Top" Width="58" Height="58" FontWeight="Bold" FontSize="25" Click="Button_Click" Name="equalsButton"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="318,103,0,0" VerticalAlignment="Top" Name="addLabel"/>
     </Grid>
 </Window>

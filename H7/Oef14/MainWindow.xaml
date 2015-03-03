@@ -1,0 +1,26 @@
+﻿<Window x:Class="Oef14.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="301.333" Width="309.667">
+    <Grid RenderTransformOrigin="0.5,0.612" Margin="0,0,3.667,-0.333">
+        <Label Content="Voornaam:" HorizontalAlignment="Left" Margin="11,17,0,0" VerticalAlignment="Top"/>
+        <GroupBox Header="Geslacht" Margin="10,75,10.666,144.333">
+            <Grid>
+                <RadioButton Content="Man" Name="manRButton" Grid.Column="1"/>
+                <RadioButton Content="Vrouw" HorizontalAlignment="Right" Name="vrouwRButton" Width="167"/>
+            </Grid>
+        </GroupBox>
+        <Button Content="Bereken" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" Width="279" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="79,18,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116" Name="naamTextBox"/>
+        <GroupBox Header="Leeftijd" Margin="10,133,10.666,34.333">
+            <Grid >
+                <RadioButton Content="Tussen 18 en 30" GroupName="Leeftijd" x:Name="leeftijd1RButton" Margin="0,0,-0.333,47.667"/>
+                <RadioButton Content="Tussen 30 en 45" GroupName="Leeftijd" x:Name="leeftijd2RButton" Margin="0,15,-0.333,33.667"/>
+                <RadioButton Content="Tussen 45 en 60" GroupName="Leeftijd" x:Name="leeftijd3RButton" Margin="0,29,-0.333,16.667"/>
+                <RadioButton Content="Ouder dan 60" GroupName="Leeftijd" x:Name="leeftijd4RButton" Margin="0,45,-0.333,0.667"/>
+            </Grid>
+        </GroupBox>
+        <Label Content="Naam:" HorizontalAlignment="Left" Margin="11,42,0,0" VerticalAlignment="Top" Width="68"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="79,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116" x:Name="voornaamTextBox"/>
+    </Grid>
+</Window>

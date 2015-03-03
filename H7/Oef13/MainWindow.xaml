@@ -1,0 +1,14 @@
+﻿<Window x:Class="Oef13.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BTW" Height="238.667" Width="333.667">
+    <Grid>
+        <Label Content="Netto Prijs:" HorizontalAlignment="Left" Margin="35,35,0,0" VerticalAlignment="Top" Width="79"/>
+        <Label Content="BTW:" HorizontalAlignment="Left" Margin="35,122,0,0" VerticalAlignment="Top" Width="79"/>
+        <Label Content="Totaal:" HorizontalAlignment="Left" Margin="35,153,0,0" VerticalAlignment="Top" Width="79"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="165,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="White" Name="nettoTextBox" TextChanged="calcHandler"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="165,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="LightGray" Name="btwTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="165,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="LightGray" Name="totaalTextBox"/>
+        <CheckBox Content="Verlaagd tarief?" HorizontalAlignment="Left" Margin="165,76,0,0" VerticalAlignment="Top" Name="tariefCheckBox" Click="clickHandler"/>
+    </Grid>
+</Window>

@@ -22,8 +22,8 @@ namespace Oef07
     public partial class MainWindow : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
-        int memory = 0;
-        Boolean status = true;
+        int memory;
+        String fun = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -45,53 +45,53 @@ namespace Oef07
             {
                 case "oneButton":
                     calcTextBox.Text += 1;
-                    calc(1);
                     break;
                 case "twoButton":
                     calcTextBox.Text += 2;
-                    calc(2);
                     break;
                 case "threeButton":
                     calcTextBox.Text += 3;
-                    calc(3);
                     break;
                 case "fourButton":
                     calcTextBox.Text += 4;
-                    calc(4);
                     break;
                 case "fiveButton":
                     calcTextBox.Text += 5;
-                    calc(5);
                     break;
                 case "sixButton":
                     calcTextBox.Text += 6;
-                    calc(6);
                     break;
                 case "sevenButton":
                     calcTextBox.Text += 7;
-                    calc(7);
                     break;
                 case "eightButton":
                     calcTextBox.Text += 8;
-                    calc(8);
                     break;
                 case "nineButton":
                     calcTextBox.Text += 9;
-                    calc(9);
                     break;
                 case "zeroButton":
                     calcTextBox.Text += 0;
                     break;
                 case "addButton":
-                    status = true;
-                    calcTextBox.Text = "";
+                    fun = "+";
+                    memory = Convert.ToInt32(calcTextBox.Text);
+                    calcTextBox.Clear();
                     break;
                 case "subtractButton":
-                    status = false;
-                    calcTextBox.Text = "";
+                    fun = "-";
+                    memory = Convert.ToInt32(calcTextBox.Text);
+                    calcTextBox.Clear();
                     break;
                 case "equalsButton":
-                    calcTextBox.Text = Convert.ToString(memory);
+                    if (fun == "+")
+                    {
+                        calcTextBox.Text = Convert.ToString(memory + Convert.ToInt32(calcTextBox.Text));
+                    }
+                    else
+                    {
+                        calcTextBox.Text = Convert.ToString(memory - Convert.ToInt32(calcTextBox.Text));
+                    }
                     break;
                 case "clearButton":
                     calcTextBox.Text = "CLEAR";
@@ -99,19 +99,6 @@ namespace Oef07
                     timer.Start();
                     break;
             };
-            addLabel.Content = memory;
-        }
-
-        private void calc(int getal)
-        {
-            if (status)
-            {
-                memory += Convert.ToInt32(calcTextBox.Text);
-            }
-            else
-            {
-                memory -= Convert.ToInt32(calcTextBox.Text);
-            }
         }
 
     }
