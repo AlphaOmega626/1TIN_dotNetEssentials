@@ -23,7 +23,7 @@ namespace Oef07
     {
         DispatcherTimer timer = new DispatcherTimer();
         int memory;
-        String fun = "";
+        String huidigeOperator = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -74,17 +74,17 @@ namespace Oef07
                     calcTextBox.Text += 0;
                     break;
                 case "addButton":
-                    fun = "+";
+                    huidigeOperator = "+";
                     memory = Convert.ToInt32(calcTextBox.Text);
                     calcTextBox.Clear();
                     break;
                 case "subtractButton":
-                    fun = "-";
+                    huidigeOperator = "-";
                     memory = Convert.ToInt32(calcTextBox.Text);
                     calcTextBox.Clear();
                     break;
                 case "equalsButton":
-                    if (fun == "+")
+                    if (huidigeOperator == "+")
                     {
                         calcTextBox.Text = Convert.ToString(memory + Convert.ToInt32(calcTextBox.Text));
                     }
