@@ -35,7 +35,7 @@ namespace Oef10
             progressBarUI.Minimum = 0;
             progressBarUI.Maximum = 500;
             progressBarUI.Value += 100;
-            if (progressBarUI.Value == 500)
+            if (progressBarUI.Value == progressBarUI.Maximum)
             {
                 timer.Stop();
                 MessageBox.Show("U heeft maar 5 seconden om in te loggen!");

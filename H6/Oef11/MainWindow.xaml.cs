@@ -18,6 +18,10 @@ namespace Analog_clock
     /// </summary>
     public partial class MainWindow
     {
+        String hour;
+        String minute;
+        String second;
+
         //Create an instance of RotateTransform objects
         private RotateTransform MinHandTr = new RotateTransform();
         private RotateTransform HourHandTr = new RotateTransform();
@@ -28,11 +32,21 @@ namespace Analog_clock
         public MainWindow()
             : base()
         {
-            Loaded += Window1_Loaded;
+            Loaded += MainWindow_Loaded;
             this.InitializeComponent();
-            // Insert code required on object creation
-            // below this point.
         }
+
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            dT.Tick += dispatcher_Tick;
+            dT.Interval = TimeSpan.FromMilliseconds(1000);
+            dT.Start();
+            secondHandTransform.Angle = (DateTime.Now.Second * 6);
+            hour = Convert.ToString(DateTime.Now.Hour);
+            minute = Convert.ToString(DateTime.Now.Minute);
+            second = Convert.ToString(DateTime.Now.Second);
+        }
+
         public void dispatcher_Tick(object source, EventArgs e)
         {
             MinHandTr.Angle = (DateTime.Now.Minute * 6);
@@ -40,20 +54,7 @@ namespace Analog_clock
             textBox1.Text = DateTime.Now.ToShortDateString();
             Minutehand.RenderTransform = MinHandTr;
             Hourhand.RenderTransform = HourHandTr;
-        }
-        private void Window1_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            dT.Tick += dispatcher_Tick;
-            //Set the interval of the Tick event to 1 sec
-            dT.Interval = new TimeSpan(0, 0, 1);
-            //Start the DispatcherTimer
-            dT.Start();
-            secondHandTransform.Angle = (DateTime.Now.Second * 6);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
+            timeTextBox.Text = String.Format("{0}:{1}:{2}", hour, minute, second);
         }
     }
 }

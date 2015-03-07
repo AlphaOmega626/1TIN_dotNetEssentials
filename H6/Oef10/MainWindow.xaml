@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <ProgressBar HorizontalAlignment="Left" Height="28" Margin="10,237,0,0" VerticalAlignment="Top" Width="500" Name="progressBarUI"/>
+        <ProgressBar HorizontalAlignment="Left" Height="28" Margin="0,237,0,0" VerticalAlignment="Top" Width="518" Name="progressBarUI"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="211,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <PasswordBox HorizontalAlignment="Left" Margin="211,102,0,0" VerticalAlignment="Top" Width="120" x:Name="pswdBox"/>
         <Label Content="Paswoord:" HorizontalAlignment="Left" Margin="133,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.477,0.505" Height="23" Width="61"/>
