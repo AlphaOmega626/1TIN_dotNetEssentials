@@ -40,16 +40,20 @@ namespace Oef07
                 {
                     for (int kolom = 1; kolom <= einde; kolom++)
                     {
-                        //if (rij == 1 && kolom == 1)
-                        //{
-                        //    for (int i = 1; i <= einde; i++)
-                        //    {
-                        //        tabelTextBlock.Text += String.Format("{0}{1}", "\t", i);
-                        //    }
-                        //    tabelTextBlock.Text += "\n\n";
-                        //}
+                        if (rij == 1 && kolom == 1)
+                        {
+                            for (int i = 1; i <= einde; i++)
+                            {
+                                tabelTextBlock.Text += String.Format("{0}{1}", "\t", i);
+                            }
+                            tabelTextBlock.Text += "\n\n";
+                        }
                         int product = rij * kolom;
-                        tabelTextBlock.Text += String.Format("{0}{1}{2}", rij, "\t", product);
+                        if (kolom == 1)
+                        {
+                            tabelTextBlock.Text += Convert.ToString(rij);
+                        }
+                        tabelTextBlock.Text += String.Format("{0}{1}", "\t", product);
 
                     }
                     tabelTextBlock.Text += "\n";
