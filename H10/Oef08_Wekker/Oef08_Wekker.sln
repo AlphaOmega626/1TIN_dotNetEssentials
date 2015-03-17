@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oef08_Wekker", "Oef08_Wekker\Oef08_Wekker.csproj", "{5D6337BC-6165-49A2-90FE-8FE743790F87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oef03_Bankrekening", "..\Oef03_Bankrekening\Oef03_Bankrekening.csproj", "{038E9614-313A-4C38-B0C4-D4C738160AAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5D6337BC-6165-49A2-90FE-8FE743790F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D6337BC-6165-49A2-90FE-8FE743790F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D6337BC-6165-49A2-90FE-8FE743790F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{038E9614-313A-4C38-B0C4-D4C738160AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{038E9614-313A-4C38-B0C4-D4C738160AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{038E9614-313A-4C38-B0C4-D4C738160AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{038E9614-313A-4C38-B0C4-D4C738160AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
