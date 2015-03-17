@@ -23,6 +23,7 @@ namespace Oef08_Wekker
     {
         private Wekker wekker;
         private DispatcherTimer timer1;
+        private DateTime alarm = new DateTime();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,17 +31,45 @@ namespace Oef08_Wekker
             timer1 = new DispatcherTimer();
             timer1.Interval = TimeSpan.FromMilliseconds(1000);
             timer1.Tick += timer1_Tick;
+            currentTimeLabel.Background = new SolidColorBrush(Colors.LightGray);
             timer1.Start();
         }
 
         void timer1_Tick(object sender, EventArgs e)
         {
             currentTimeLabel.Content = wekker.getTijd.ToString("HH:mm:ss");
+            if (wekker.getAlarmWentOff == true)
+            {
+                if (DateTime.Now.Second % 2 == 0)
+                {
+                    currentTimeLabel.Background = new SolidColorBrush(Colors.Red);
+                }
+                else
+                {
+                    currentTimeLabel.Background = new SolidColorBrush(Colors.LightGray);
+                }             
+            }
         }
 
         private void setAlarmButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!(alarmTimeTextBox.Text.Equals(null)))
+            {
+                int hour = Convert.ToInt32(alarmTimeTextBox.Text.Substring(0, 2));
+                int minute = Convert.ToInt32(alarmTimeTextBox.Text.Substring(3, 2));
+                int second = Convert.ToInt32(alarmTimeTextBox.Text.Substring(6, 2));
+                wekker.setAlarm(alarm.Date + new TimeSpan(hour, minute, second));
+                alarmSetTextBox.Content = wekker.getAlarm.ToString("HH:mm:ss");
+                alarmLogo.Visibility = Visibility.Visible;
+            }
+            
+        }
 
+        private void resetAlarmButton_Click(object sender, RoutedEventArgs e)
+        {
+            wekker.resetAlarm();
+            alarmLogo.Visibility = Visibility.Hidden;
+            alarmSetTextBox.Content = "";
         }
     }
 }
