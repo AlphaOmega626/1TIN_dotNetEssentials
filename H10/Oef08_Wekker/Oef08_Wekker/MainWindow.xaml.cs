@@ -24,6 +24,7 @@ namespace Oef08_Wekker
         private Wekker wekker;
         private DispatcherTimer timer1;
         private DateTime alarm = new DateTime();
+        int teller = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -37,17 +38,31 @@ namespace Oef08_Wekker
 
         void timer1_Tick(object sender, EventArgs e)
         {
+            
             currentTimeLabel.Content = wekker.getTijd.ToString("HH:mm:ss");
             if (wekker.getAlarmWentOff == true)
             {
-                if (DateTime.Now.Second % 2 == 0)
+                teller++;
+                if (teller != wekker.getAlarmDuur)
                 {
-                    currentTimeLabel.Background = new SolidColorBrush(Colors.Red);
+                    if (DateTime.Now.Second % 2 == 0)
+                    {
+                        currentTimeLabel.Background = new SolidColorBrush(Colors.Red);
+                    }
+                    else
+                    {
+                        currentTimeLabel.Background = new SolidColorBrush(Colors.LightGray);
+                    }
                 }
                 else
                 {
+                    teller = 0;
+                    wekker.resetAlarm();
                     currentTimeLabel.Background = new SolidColorBrush(Colors.LightGray);
-                }             
+                    alarmLogo.Visibility = Visibility.Hidden;
+                    alarmSetTextBox.Content = "";
+                }
+                
             }
         }
 
@@ -70,6 +85,11 @@ namespace Oef08_Wekker
             wekker.resetAlarm();
             alarmLogo.Visibility = Visibility.Hidden;
             alarmSetTextBox.Content = "";
+        }
+
+        private void saveAlarmLengthButton_Click(object sender, RoutedEventArgs e)
+        {
+            wekker.setAlarmDuur(Convert.ToInt32(alarmLengthTextBox.Text));
         }
     }
 }

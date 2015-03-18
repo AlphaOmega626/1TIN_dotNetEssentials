@@ -17,6 +17,7 @@ namespace Oef08_Wekker
 
         public Wekker () {
             alarmWentOff = false;
+            alarmduur = 10;
             timer.Interval = TimeSpan.FromMilliseconds(1000);
             timer.Tick += timer_Tick;
             timer.Start();
@@ -66,6 +67,14 @@ namespace Oef08_Wekker
                 return this.alarm;
             }
             
+        }
+
+        public int getAlarmDuur
+        {
+            get
+            {
+                return this.alarmduur;
+            }
         }
     }
 }
