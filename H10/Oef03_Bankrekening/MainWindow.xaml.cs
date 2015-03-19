@@ -25,16 +25,36 @@ namespace Oef03_Bankrekening
         {
             InitializeComponent();
             bankrek = new Bankrekening();
-            saldoTextBox.Content = String.Format("{0:C}", bankrek.getSaldo());
+            updateSaldo();
+            afhaalButton.Visibility = Visibility.Hidden;
         }
 
-        private void transactionButton_Click(object sender, RoutedEventArgs e)
+        private void afhaalButton_Click(object sender, RoutedEventArgs e)
         {
-            bankrek.transaction(Convert.ToDouble(amountTextBox.Text));
-            saldoTextBox.Content = String.Format("{0:C}", bankrek.getSaldo());
+            bankrek.afhalen(Convert.ToDouble(amountTextBox.Text));
+            updateSaldo();
             if (bankrek.getSaldo() < 0)
             {
                 MessageBox.Show("NEGATIEF SALDO!");
+            }
+        }
+
+        private void stortButton_Click(object sender, RoutedEventArgs e)
+        {
+            bankrek.storten(Convert.ToDouble(amountTextBox.Text));
+            updateSaldo();
+        }
+
+        private void updateSaldo()
+        {
+            saldoTextBox.Content = String.Format("{0:C}", bankrek.getSaldo());
+            if (bankrek.getSaldo() > 0)
+            {
+                afhaalButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                afhaalButton.Visibility = Visibility.Hidden;
             }
         }
     }

@@ -17,20 +17,18 @@ namespace Oef03_Bankrekening
 
         public double getSaldo()
         {
-                return this.saldo;
+            return this.saldo;
         }
 
-        public void transaction(double amount)
+        public void storten(double amount)
         {
-            if (amount < 0)
-            {
-                this.saldo -= Math.Abs(amount);
-            }
-            else
-            {
-                this.saldo += Math.Abs(amount);
-            }
-            
+            this.saldo += amount;
         }
+
+        public void afhalen(double amount)
+        {
+                this.saldo -= amount;
+        }
+
     }
 }

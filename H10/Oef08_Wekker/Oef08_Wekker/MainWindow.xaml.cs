@@ -68,7 +68,9 @@ namespace Oef08_Wekker
 
         private void setAlarmButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!(alarmTimeTextBox.Text.Equals(null)))
+            String text = alarmTimeTextBox.Text;
+            checkString(text);
+            if (!(alarmTimeTextBox.Text.Equals(null))   )
             {
                 int hour = Convert.ToInt32(alarmTimeTextBox.Text.Substring(0, 2));
                 int minute = Convert.ToInt32(alarmTimeTextBox.Text.Substring(3, 2));
@@ -78,6 +80,16 @@ namespace Oef08_Wekker
                 alarmLogo.Visibility = Visibility.Visible;
             }
             
+        }
+
+        private void checkString(String text)
+        {
+            int length = text.Length;
+            char[] chars = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                chars[i] = Convert.ToChar(text.Substring(i, 1));
+            }
         }
 
         private void resetAlarmButton_Click(object sender, RoutedEventArgs e)

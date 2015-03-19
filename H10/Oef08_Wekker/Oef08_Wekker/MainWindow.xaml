@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="286" Width="525">
     <Grid Background="LightGray">
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="190,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" Name="alarmTimeTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="190,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" Name="alarmTimeTextBox" />
         <Label Content="Stel de alarmtijd in (HH:mm:ss):" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top"/>
         <Label Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="116" Width="499" Name="currentTimeLabel" FontSize="70" FontWeight="Bold" HorizontalContentAlignment="Center"/>
         <Button Content="Set" HorizontalAlignment="Left" Margin="350,193,0,0" VerticalAlignment="Top" Width="71" Name="setAlarmButton" Click="setAlarmButton_Click" Height="23"/>

@@ -5,8 +5,10 @@
     <Grid>
         <Label Content="" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Height="63" Width="499" FontSize="30" FontWeight="Bold" HorizontalContentAlignment="Center" Name="saldoTextBox"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" Name="amountTextBox"/>
-        <Button Content="Transaction" HorizontalAlignment="Left" Margin="241,10,0,0" VerticalAlignment="Top" Width="268" Height="23" Name="transactionButton" Click="transactionButton_Click"/>
+        <Button Content="Afhalen" HorizontalAlignment="Left" Margin="406,10,0,0" VerticalAlignment="Top" Width="103" Height="23" Name="afhaalButton" Click="afhaalButton_Click"/>
         <Label Content="Saldo:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top"/>
+        <Button Content="Storten" HorizontalAlignment="Left" Margin="280,10,0,0" VerticalAlignment="Top" Width="103" Height="23" Name="stortButton" Click="stortButton_Click"/>
 
     </Grid>
 </Window>
+    
