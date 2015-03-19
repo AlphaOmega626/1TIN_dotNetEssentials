@@ -33,12 +33,12 @@ namespace Oef08_Wekker
             timer1.Interval = TimeSpan.FromMilliseconds(1000);
             timer1.Tick += timer1_Tick;
             currentTimeLabel.Background = new SolidColorBrush(Colors.LightGray);
+            alarmTimeTextBox.Text = "__:__:__";
             timer1.Start();
         }
 
         void timer1_Tick(object sender, EventArgs e)
         {
-            
             currentTimeLabel.Content = wekker.getTijd.ToString("HH:mm:ss");
             if (wekker.getAlarmWentOff == true)
             {
@@ -62,15 +62,14 @@ namespace Oef08_Wekker
                     alarmLogo.Visibility = Visibility.Hidden;
                     alarmSetTextBox.Content = "";
                 }
-                
+
             }
         }
 
         private void setAlarmButton_Click(object sender, RoutedEventArgs e)
         {
             String text = alarmTimeTextBox.Text;
-            checkString(text);
-            if (!(alarmTimeTextBox.Text.Equals(null))   )
+            if (checkString(text))
             {
                 int hour = Convert.ToInt32(alarmTimeTextBox.Text.Substring(0, 2));
                 int minute = Convert.ToInt32(alarmTimeTextBox.Text.Substring(3, 2));
@@ -79,17 +78,50 @@ namespace Oef08_Wekker
                 alarmSetTextBox.Content = wekker.getAlarm.ToString("HH:mm:ss");
                 alarmLogo.Visibility = Visibility.Visible;
             }
-            
+            else
+            {
+                MessageBox.Show("Enter a corrent time format -> HH:mm:ss", "WARNING", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
         }
 
-        private void checkString(String text)
+        private Boolean checkString(String text)
         {
             int length = text.Length;
-            char[] chars = new char[length];
-            for (int i = 0; i < length; i++)
+            if (length == 8 && text != String.Empty)
             {
-                chars[i] = Convert.ToChar(text.Substring(i, 1));
+                String part1 = text.Substring(0, 2);
+                String part2 = text.Substring(2, 1);
+                String part3 = text.Substring(3, 2);
+                String part4 = text.Substring(5, 1);
+                String part5 = text.Substring(6, 2);
+                int part1int;
+                int part3int;
+                int part5int;
+                Boolean part1b = int.TryParse(part1,out part1int);
+                Boolean part3b = int.TryParse(part3, out part3int);
+                Boolean part5b = int.TryParse(part5, out part5int);
+                if (part1b && part3b && part5b)
+                {
+                    if (part1int < 24 && part2.Equals(":") && part3int < 60 && part4.Equals(":") && part5int < 60)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
             }
+            else
+            {
+                return false;
+            }
+
         }
 
         private void resetAlarmButton_Click(object sender, RoutedEventArgs e)
@@ -101,7 +133,10 @@ namespace Oef08_Wekker
 
         private void saveAlarmLengthButton_Click(object sender, RoutedEventArgs e)
         {
-            wekker.setAlarmDuur(Convert.ToInt32(alarmLengthTextBox.Text));
+            if (alarmLengthTextBox.Text != String.Empty)
+            {
+                wekker.setAlarmDuur(Convert.ToInt32(alarmLengthTextBox.Text));
+            }            
         }
     }
 }
