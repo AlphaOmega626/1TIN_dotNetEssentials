@@ -7,7 +7,7 @@
     <ProjectGuid>{24CA6BEA-7211-4223-94AA-798901F8B92C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Vragen</RootNamespace>
+    <RootNamespace>BeheerVragen</RootNamespace>
     <AssemblyName>Vragen</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -53,6 +53,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MultipleChoiceVraag.cs" />
+    <Compile Include="OneChoiceVraag.cs" />
+    <Compile Include="Vraag.cs" />
+    <Compile Include="VraagActies.cs" />
     <Compile Include="VragenWindow.xaml.cs">
       <DependentUpon>VragenWindow.xaml</DependentUpon>
     </Compile>

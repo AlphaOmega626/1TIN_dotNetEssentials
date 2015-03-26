@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Made by Frankie Claessens
+ * 26/03/2015
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Vragen
+namespace BeheerVragen
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +28,12 @@ namespace Vragen
         public MainWindow()
         {
             InitializeComponent();
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
 
         private void buttonClick(object sender, RoutedEventArgs e)

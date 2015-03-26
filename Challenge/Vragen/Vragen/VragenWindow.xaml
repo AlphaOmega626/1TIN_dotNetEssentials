@@ -1,9 +1,15 @@
-﻿<Window x:Class="Vragen.VragenWindow"
+﻿<Window x:Class="BeheerVragen.VragenWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="VragenWindow" Height="474" Width="812">
+        Title="VragenWindow" Height="316" Width="812">
     <Grid>
         <Button Content="Terug" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Name="terugButton" Click="terugButton_Click"/>
+        <ListBox HorizontalAlignment="Left" Height="186" Margin="98,10,0,0" VerticalAlignment="Top" Width="697" Name="vragenListBox" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="vragenListBox_SelectionChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="98,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" Name="vakTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="153,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" x:Name="typeTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="208,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" x:Name="mGraadTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="263,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" x:Name="correctAnswerTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="318,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="477" x:Name="opgaveTextBox"/>
 
     </Grid>
 </Window>
