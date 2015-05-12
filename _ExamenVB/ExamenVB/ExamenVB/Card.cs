@@ -9,36 +9,21 @@ namespace ExamenVB
 {
     public class Card
     {
-        private String cardName; 
+        private String cardFace;
+        private String cardSuit;
         private Image cardFrontImage;
-        private Image cardBackImage;
         private int cardValue;
-        public Card(String cardName, Image cardImage)
+        public Card(String cardFace, String cardSuit, Image cardImage)
         {
-            this.cardName = cardName;
+            this.cardFace = cardFace;
+            this.cardSuit = cardSuit;
             this.cardFrontImage = cardImage;
-            this.cardBackImage = new Image();
-            BitmapImage logo = new BitmapImage();
-            logo.BeginInit();
-            logo.UriSource = new Uri("pack://application:,,,/ExamenVB;component/card_images/cardback.png");
-            logo.EndInit();
-            cardBackImage.Source = logo;
             SetCardValue();
         }
 
         public Image GetFrontCardImage()
         {
             return this.cardFrontImage;
-        }
-
-        public Image GetBackCardImage()
-        {
-            return this.cardBackImage;
-        }
-
-        public String GetFrontCardName()
-        {
-            return this.cardName;
         }
 
         public int GetCardValue()
@@ -48,58 +33,63 @@ namespace ExamenVB
 
         private void SetCardValue()
         {
-            if (this.cardName.Contains("Deuce"))
+            if (this.cardFace.Contains("Deuce"))
             {
                 this.cardValue = 2;
             }
-            else if (this.cardName.Contains("Three"))
+            else if (this.cardFace.Contains("Three"))
             {
                 this.cardValue = 3;
             }
-            else if (this.cardName.Contains("Four"))
+            else if (this.cardFace.Contains("Four"))
             {
                 this.cardValue = 4;
             }
-            else if (this.cardName.Contains("Five"))
+            else if (this.cardFace.Contains("Five"))
             {
                 this.cardValue = 5;
-            } 
-            else if (this.cardName.Contains("Six"))
+            }
+            else if (this.cardFace.Contains("Six"))
             {
                 this.cardValue = 6;
             }
-            else if (this.cardName.Contains("Seven"))
+            else if (this.cardFace.Contains("Seven"))
             {
                 this.cardValue = 7;
             }
-            else if (this.cardName.Contains("Eight"))
+            else if (this.cardFace.Contains("Eight"))
             {
                 this.cardValue = 8;
             }
-            else if (this.cardName.Contains("Nine"))
+            else if (this.cardFace.Contains("Nine"))
             {
                 this.cardValue = 9;
             }
-            else if (this.cardName.Contains("Ten"))
+            else if (this.cardFace.Contains("Ten"))
             {
                 this.cardValue = 10;
             }
-            else if (this.cardName.Contains("Jack"))
+            else if (this.cardFace.Contains("Jack"))
             {
                 this.cardValue = 11;
             }
-            else if (this.cardName.Contains("Queen"))
+            else if (this.cardFace.Contains("Queen"))
             {
                 this.cardValue = 12;
             }
-            else if (this.cardName.Contains("King"))
+            else if (this.cardFace.Contains("King"))
             {
                 this.cardValue = 13;
             }
-            else if (this.cardName.Contains("Ace"))
+            else if (this.cardFace.Contains("Ace"))
             {
                 this.cardValue = 14;
             }
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0} of {1}", this.cardFace, this.cardSuit);
         }
     }
 }

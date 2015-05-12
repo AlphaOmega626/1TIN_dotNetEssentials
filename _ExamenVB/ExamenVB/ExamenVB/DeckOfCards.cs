@@ -16,7 +16,7 @@ namespace ExamenVB
         private String cardsTXTPath = "Cards.txt";
         private List<Card> cardsList = new List<Card>();
         private Random random;
-
+        public Card currentCard;
         public DeckOfCards()
         {
             GenerateCards();
@@ -26,18 +26,18 @@ namespace ExamenVB
         public void GenerateCards()
         {
             String temp = Path.GetFullPath(cardsTXTPath);
-            String[] cardTypes;
-            String[] cardNumbers;
+            String[] cardSuits;
+            String[] cardFaces;
             using (StreamReader reader = new StreamReader(cardsTXTPath))
             {
-                cardNumbers = reader.ReadLine().Split(',');
-                cardTypes = reader.ReadLine().Split(',');
+                cardFaces = reader.ReadLine().Split(',');
+                cardSuits = reader.ReadLine().Split(',');
             }
-            foreach (String cardType in cardTypes)
+            foreach (String cardSuit in cardSuits)
             {
-                foreach (String cardNumber in cardNumbers)
+                foreach (String cardFace in cardFaces)
                 {
-                    String cardName = String.Concat(cardNumber, cardType);
+                    String cardName = String.Concat(cardFace, cardSuit);
                     String fileName = String.Concat(cardName, ".png");
                     Image cardFrontImage = new Image();
                     BitmapImage logo = new BitmapImage();
@@ -45,7 +45,7 @@ namespace ExamenVB
                     logo.UriSource = new Uri(String.Concat("pack://application:,,,/ExamenVB;component/card_images/",fileName));
                     logo.EndInit();
                     cardFrontImage.Source = logo;
-                    this.cardsList.Add(new Card(cardName, cardFrontImage));
+                    this.cardsList.Add(new Card(cardFace, cardSuit, cardFrontImage));
                 }
             }
         }
@@ -56,10 +56,10 @@ namespace ExamenVB
             return cardsList;
         }
 
-        public Card DealCard()
+        public void DealCard()
         {
             int randomCard = random.Next(0,cardsList.Count - 1);
-            return this.cardsList[randomCard];
+            this.currentCard = this.cardsList[randomCard];
         }
 
         private void ShuffleList<E>(IList<E> list)

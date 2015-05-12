@@ -3,18 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Cards" Height="600" Width="800"
         Background="#777">
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top" Background="#DDD">
+            <MenuItem Name="fileMenuItem" Header="_File" Click="MenuHandler" Background="#DDD" Visibility="Visible">
+                <MenuItem Name="closeMenuItem" Header="_Close" Click="MenuHandler" Background="#DDD" Visibility="Visible"/>
+            </MenuItem>
+            <MenuItem Name="toolsMenuItem" Header="_Tools" Click="MenuHandler" Background="#DDD" Visibility="Visible">
+                <MenuItem Name="dealMenuItem" Header="_Deal" Click="MenuHandler" Background="#DDD" Visibility="Visible"/>
+            </MenuItem>
+        </Menu>
     <Grid>
-        <Button Name="shuffleButton" Content="Shuffle Cards" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="50" Margin="0,25" Click="Button_Click"/>
-        <Button Name="dealButton" Content="Deal Card" HorizontalAlignment="Right" Margin="50,140" VerticalAlignment="Top" Width="200" Height="50" Click="Button_Click"/>
+        <Button Name="shuffleButton" Content="Shuffle Cards" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="50" Margin="0,25" Click="ButtonHandler"/>
+        <Button Name="dealButton" Content="Deal Card" HorizontalAlignment="Right" Margin="50,140" VerticalAlignment="Top" Width="200" Height="50" Click="ButtonHandler"/>
         <Label Name="statusLabel" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Margin="0,100" HorizontalContentAlignment="Center" Background="#EEE"/>
         <Label Name="userFrontCardNameLabel" Content="" HorizontalAlignment="Right" VerticalAlignment="Top" Width="200" Margin="0,200,50,0" HorizontalContentAlignment="Center" Background="#EEE"/>
         <Label Name="userCardCounterLabel" Content="" HorizontalAlignment="Right" VerticalAlignment="Top" Width="200" Margin="0,240,50,0" HorizontalContentAlignment="Center" Background="#EEE"/>
         <Label Name="computerFrontCardNameLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="50,200,0,0" HorizontalContentAlignment="Center" Background="#EEE"/>
         <Label Name="computerCardCounterLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="50,240,0,0" HorizontalContentAlignment="Center" Background="#EEE"/>
-        <Border Name="computerFrontCardImage" HorizontalAlignment="Left" Width="130" Height="174" VerticalAlignment="Center" Margin="75,200,0,0"/>
-        <Border Name="userFrontCardImage" HorizontalAlignment="Right" Width="130" Height="174" VerticalAlignment="Center" Margin="75,200,75,0"/>
-        <Border Name="userBackCardImage" HorizontalAlignment="Center" Width="65" Height="87" VerticalAlignment="Center" Margin="140,0,0,0"/>
-        <Border Name="computerBackCardImage" HorizontalAlignment="Center" Width="65" Height="87" VerticalAlignment="Center" Margin="-140,0,0,0"/>
+        <Grid Name="computerFrontCardImage" HorizontalAlignment="Left" Width="130" Height="174" VerticalAlignment="Center" Margin="75,200,0,0"/>
+        <Grid Name="userFrontCardImage" HorizontalAlignment="Right" Width="130" Height="174" VerticalAlignment="Center" Margin="75,200,75,0"/>
+        <Image Name="userBackCardImage" HorizontalAlignment="Center" Width="65" Height="87" VerticalAlignment="Center" Margin="140,0,0,0" MouseLeftButtonDown="CardHandler" Source="card_images/cardback.png"/>
+            <Image Name="computerBackCardImage" HorizontalAlignment="Center" Width="65" Height="87" VerticalAlignment="Center" Margin="-140,0,0,0" MouseLeftButtonDown="CardHandler" Source="card_images/cardback.png"/>
         <Label Name="winLabel" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Width="700" Margin="0,40"  HorizontalContentAlignment="Center" Background="#EEE"/>
     </Grid>
+    </DockPanel>
 </Window>

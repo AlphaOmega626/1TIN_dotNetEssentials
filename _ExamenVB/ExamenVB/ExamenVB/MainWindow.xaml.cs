@@ -14,16 +14,17 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Threading;
+using System.Windows.Threading;
 
 namespace ExamenVB
 {
     public partial class MainWindow : Window
     {
-        private DeckOfCards deck = new DeckOfCards();
+        private DeckOfCards deckUser = new DeckOfCards();
+        private DeckOfCards deckComputer = new DeckOfCards();
         private int cardCounterUser = 0;
         private int cardCounterComputer = 0;
-        Card userTempCard;
-        Card computerTempCard;
+        DispatcherTimer computerSleepTimer = new DispatcherTimer();
         public MainWindow()
         {
             InitializeComponent();
@@ -32,68 +33,82 @@ namespace ExamenVB
 
         private void Begin()
         {
-            deck.GenerateCards();
+            deckUser.GenerateCards();
+            computerSleepTimer.Interval = TimeSpan.FromMilliseconds(2000);
+            computerSleepTimer.Tick += computerSleepTimer_Tick;
+            
+        }
+
+        void computerSleepTimer_Tick(object sender, EventArgs e)
+        {
+            if (cardCounterComputer <= 52)
+            {
+                deckComputer.DealCard();
+                cardCounterComputer++;
+                computerFrontCardImage.Children.Clear();
+                computerFrontCardImage.Children.Add(deckComputer.currentCard.GetFrontCardImage());
+                computerFrontCardNameLabel.Content = deckComputer.currentCard.ToString();
+                computerCardCounterLabel.Content = String.Format("Card #{0}", cardCounterComputer.ToString());
+                computerCardCounterLabel.Content = String.Format("Card #{0}", cardCounterUser.ToString());
+                CheckCards();
+                computerSleepTimer.Stop();
+            }
+            else
+            {
+
+            }
         }
 
         private void Shuffle()
         {
-            deck.ShuffleCards();
+            deckUser.ShuffleCards();
             statusLabel.Content = "Deck Shuffled!";
         }
 
         private void DealUser()
-        {          
-            userTempCard = deck.DealCard();
-            cardCounterUser++;
-            userBackCardImage.Child = userTempCard.GetBackCardImage();
-            userFrontCardImage.Child = userTempCard.GetFrontCardImage();
-            userFrontCardNameLabel.Content = userTempCard.GetFrontCardName();
-            userCardCounterLabel.Content = String.Format("Card #{0}", cardCounterUser.ToString());
-            statusLabel.Content = "Card dealt!";
-            DealComputer();
+        {
+            if (cardCounterUser <= 52)
+            {
+                cardCounterUser++;
+                deckUser.DealCard();
+                userFrontCardImage.Children.Clear();
+                userFrontCardImage.Children.Add(deckUser.currentCard.GetFrontCardImage());
+                userFrontCardNameLabel.Content = deckUser.currentCard.ToString();
+                userCardCounterLabel.Content = String.Format("Card #{0}", cardCounterUser.ToString());
+                statusLabel.Content = "Card dealt!";
+                DealComputer();
+            }
+            else
+            {
+
+            }
         }
 
         private void DealComputer()
         {
-            computerTempCard = deck.DealCard();
-            cardCounterComputer++;
-            if (computerTempCard == userTempCard)
-            {
-                Image tempImage = new Image();
-                tempImage.Source = userTempCard.GetFrontCardImage().Source;
-                computerFrontCardImage.Child = tempImage;
-                Image tempImageBack = new Image();
-                tempImageBack.Source = userTempCard.GetBackCardImage().Source;
-                computerBackCardImage.Child = tempImageBack;
-            }
-            else
-            {
-                computerFrontCardImage.Child = computerTempCard.GetFrontCardImage();
-                computerBackCardImage.Child = computerTempCard.GetBackCardImage();
-            }            
-            computerFrontCardNameLabel.Content = computerTempCard.GetFrontCardName();
-            computerCardCounterLabel.Content = String.Format("Card #{0}", cardCounterComputer.ToString());
-            computerCardCounterLabel.Content = String.Format("Card #{0}", cardCounterUser.ToString());
-            CheckCards();
+            computerSleepTimer.Start();
         }
 
         private void CheckCards()
         {
-            if (computerTempCard.GetCardValue() == userTempCard.GetCardValue())
+            if (deckComputer.currentCard != null && deckUser.currentCard != null)
             {
-                winLabel.Content = "GELIJK!";
-            }
-            else if (computerTempCard.GetCardValue() > userTempCard.GetCardValue())
-            {
-                winLabel.Content = "COMPUTER WINT!";
-            }
-            else
-            {
-                winLabel.Content = "JIJ WINT!";
+                if (deckComputer.currentCard.GetCardValue() == deckUser.currentCard.GetCardValue())
+                {
+                    winLabel.Content = "GELIJK!";
+                }
+                else if (deckComputer.currentCard.GetCardValue() > deckUser.currentCard.GetCardValue())
+                {
+                    winLabel.Content = "COMPUTER WINT!";
+                }
+                else
+                {
+                    winLabel.Content = "JIJ WINT!";
+                }
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonHandler(object sender, RoutedEventArgs e)
         {
             Button tempButton = (Button)sender;
             switch (tempButton.Name)
@@ -103,6 +118,35 @@ namespace ExamenVB
                     break;
                 case "dealButton":
                     DealUser();
+                    break;
+            }
+
+        }
+
+        private void MenuHandler(object sender, RoutedEventArgs e)
+        {
+            MenuItem tempMenuItem = (MenuItem)sender;
+            switch (tempMenuItem.Name)
+            {
+                case "closeMenuItem":
+                    this.Close();
+                    break;
+                case "dealMenuItem":
+                    DealUser();
+                    break;
+            }
+        }
+
+        private void CardHandler(object sender, MouseButtonEventArgs e)
+        {
+            Image tempGrid = (Image)sender;
+            switch (tempGrid.Name)
+            {
+                case "userBackCardImage":
+                    DealUser();
+                    break;
+                case "computerBackCardImage":
+                    DealComputer();
                     break;
             }
 
