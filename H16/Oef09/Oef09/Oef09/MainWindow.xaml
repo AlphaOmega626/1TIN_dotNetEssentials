@@ -5,14 +5,16 @@
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="132,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="358" Name="searchTextBox"/>
         <Label Content="Search:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="117"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="132,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="358" Name="replaceTextBoth"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="132,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="358" Name="replaceTextBox"/>
         <Label Content="Replace With:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="117"/>
         <Label Content="Algoritme:" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="117"/>
         <ComboBox HorizontalAlignment="Left" Margin="132,69,0,0" VerticalAlignment="Top" Width="358" Name="algorithmComboBox"/>
         <Button Content="Execute" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="158" Height="38" Name="executeButton" Click="ClickHandler"/>
         <Button Content="Clear" HorizontalAlignment="Left" Margin="173,100,0,0" VerticalAlignment="Top" Width="151" Height="38" Name="clearButton" Click="ClickHandler"/>
         <Button Content="Load" HorizontalAlignment="Left" Margin="329,100,0,0" VerticalAlignment="Top" Width="161" Height="38" Name="loadButton" Click="ClickHandler"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="372" Width="480" Name="resultTextBlock"/>
-
+        <ScrollViewer HorizontalAlignment="Left" Margin="10,167,0,43" Width="480">
+        <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" Name="resultTextBlock"/>
+        </ScrollViewer>
+        <Label Content="" HorizontalAlignment="Left" Margin="10,489,0,0" VerticalAlignment="Top" Width="480" Name="timeLabel"/>
     </Grid>
 </Window>
