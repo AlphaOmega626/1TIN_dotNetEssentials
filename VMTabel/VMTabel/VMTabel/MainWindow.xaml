@@ -1,0 +1,11 @@
+﻿<Window x:Class="VMTabel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="VMTextBox"/>
+        <Button Content="Genereer" HorizontalAlignment="Left" Margin="135,10,0,0" VerticalAlignment="Top" Width="372" Height="35" Name="generateButton" Click="ClickHandler"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="259" Width="497" Name="VMTextBlock" FontFamily="Courier New"/>
+
+    </Grid>
+</Window>
