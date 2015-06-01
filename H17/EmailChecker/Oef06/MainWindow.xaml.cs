@@ -27,8 +27,23 @@ namespace Oef06
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            EmailChecker tempEmailChecker = new EmailChecker();
-            tempEmailChecker.CheckAddress(emailAddressTextBox.Text);
+            CheckEmail();
+        }
+
+        private void CheckEmail()
+        {
+            try
+            {
+                EmailChecker tempEmailChecker = new EmailChecker();
+                if (tempEmailChecker.CheckAddress(emailAddressTextBox.Text))
+                {
+                    MessageBox.Show(String.Format("Geldig Emailadres: {0}", emailAddressTextBox.Text));
+                }
+            }
+            catch (InvalidEmailException ex)
+            {
+                MessageBox.Show(String.Format("{0}: {1}", ex.message, ex.emailAdress), "Opgelet!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

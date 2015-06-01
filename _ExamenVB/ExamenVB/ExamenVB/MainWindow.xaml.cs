@@ -74,7 +74,8 @@ namespace ExamenVB
         private void OpenFile()
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Text Files (*.txt|*.txt|All files (*.*)|*.*";
+            ofd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            ofd.InitialDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
             if (ofd.ShowDialog() == true)
             {
                 String fullPath = ofd.FileName;
@@ -83,8 +84,6 @@ namespace ExamenVB
             }
             computerSleepTimer.Interval = TimeSpan.FromMilliseconds(1000);
             computerSleepTimer.Tick += computerSleepTimer_Tick;
-            dealMenuItem.Opacity = 1;
-            dealMenuItem.IsEnabled = true;
             EnableMenuItems();
             statusLabel.Content = "Decks created, click shuffle!";
         }
