@@ -33,6 +33,8 @@ namespace ExamenVB
         {
             InitializeComponent();
             DisableMenuItems();
+            computerSleepTimer.Interval = TimeSpan.FromMilliseconds(1000);
+            computerSleepTimer.Tick += computerSleepTimer_Tick;
         }
 
         private void DisableMenuItems()
@@ -82,8 +84,6 @@ namespace ExamenVB
                 deckUser = new DeckOfCards(fullPath);
                 deckComputer = new DeckOfCards(fullPath);
             }
-            computerSleepTimer.Interval = TimeSpan.FromMilliseconds(1000);
-            computerSleepTimer.Tick += computerSleepTimer_Tick;
             EnableMenuItems();
             statusLabel.Content = "Decks created, click shuffle!";
         }
@@ -96,6 +96,7 @@ namespace ExamenVB
         private void Shuffle()
         {
             deckUser.ShuffleCards();
+            deckComputer.ShuffleCards();
             statusLabel.Content = "Deck Shuffled!";
             computerWins = 0;
             userWins = 0;

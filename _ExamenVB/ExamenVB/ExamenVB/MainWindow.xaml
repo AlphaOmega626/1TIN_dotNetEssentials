@@ -4,13 +4,14 @@
         Title="Cards" Height="600" Width="800"
         Background="#CCC">
     <DockPanel LastChildFill="True">
-        <Menu DockPanel.Dock="Top" Background="#DDD">
-            <MenuItem Name="fileMenuItem" Header="_File" Click="MenuHandler" Background="#DDD">
-                <MenuItem Name="openMenuItem" Header="_Open" Click="MenuHandler" Background="#DDD" />
-                <MenuItem Name="exitMenuItem" Header="_Exit" Click="MenuHandler" Background="#DDD" />
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Name="fileMenuItem" Header="_File" Click="MenuHandler">
+                <MenuItem Name="openMenuItem" Header="_Open" Click="MenuHandler"/>
+                <Separator/>
+                <MenuItem Name="exitMenuItem" Header="_Exit" Click="MenuHandler"/>
             </MenuItem>
-            <MenuItem Name="toolsMenuItem" Header="_Tools" Click="MenuHandler" Background="#DDD">
-                <MenuItem Name="dealMenuItem" Header="_Deal" Click="MenuHandler" Background="#DDD"/>
+            <MenuItem Name="toolsMenuItem" Header="_Tools" Click="MenuHandler">
+                <MenuItem Name="dealMenuItem" Header="_Deal" Click="MenuHandler"/>
             </MenuItem>
         </Menu>
     <Grid>

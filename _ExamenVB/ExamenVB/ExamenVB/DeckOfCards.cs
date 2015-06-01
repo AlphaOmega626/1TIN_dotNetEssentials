@@ -37,6 +37,7 @@ namespace ExamenVB
                     cardFaces = reader.ReadLine().Split(',');
                     cardSuits = reader.ReadLine().Split(',');
                 }
+                //Using gebruikt ipv try catch finally, Using doet alles vanzelf (sluit de stream af).
                 foreach (String cardSuit in cardSuits)
                 {
                     foreach (String cardFace in cardFaces)

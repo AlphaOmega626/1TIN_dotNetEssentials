@@ -1,0 +1,21 @@
+﻿<Window x:Class="Oef07.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="300" Width="450">
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Click="MenuHandler" Name="openMenuButton"/>
+                <Separator/>
+                <MenuItem Header="_Close" Click="MenuHandler" Name="closeMenuButton"/>
+            </MenuItem>            
+        </Menu>
+        <Grid>
+            <TextBox Name="searchTextBox" VerticalAlignment="Top" Height="30" Width="200" HorizontalAlignment="Left" Margin="10"/>
+            <Button Name="searchButton" Click="ClickHandler" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Search" Margin="10" IsEnabled="False"/>
+            <ScrollViewer Width="435" Height="200" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <TextBlock Name="resultTextBlock"/>
+            </ScrollViewer>
+        </Grid>
+    </DockPanel>
+</Window>

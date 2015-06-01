@@ -97,59 +97,165 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="card_images\AceClubs.png" />
-    <Resource Include="card_images\AceDiamonds.png" />
-    <Resource Include="card_images\AceHearts.png" />
-    <Resource Include="card_images\AceSpades.png" />
-    <Resource Include="card_images\cardback.png" />
-    <Resource Include="card_images\DeuceClubs.png" />
-    <Resource Include="card_images\DeuceDiamonds.png" />
-    <Resource Include="card_images\DeuceHearts.png" />
-    <Resource Include="card_images\DeuceSpades.png" />
-    <Resource Include="card_images\EightClubs.png" />
-    <Resource Include="card_images\EightDiamonds.png" />
-    <Resource Include="card_images\EightHearts.png" />
-    <Resource Include="card_images\EightSpades.png" />
-    <Resource Include="card_images\FiveClubs.png" />
-    <Resource Include="card_images\FiveDiamonds.png" />
-    <Resource Include="card_images\FiveHearts.png" />
-    <Resource Include="card_images\FiveSpades.png" />
-    <Resource Include="card_images\FourClubs.png" />
-    <Resource Include="card_images\FourDiamonds.png" />
-    <Resource Include="card_images\FourHearts.png" />
-    <Resource Include="card_images\FourSpades.png" />
-    <Resource Include="card_images\JackClubs.png" />
-    <Resource Include="card_images\JackDiamonds.png" />
-    <Resource Include="card_images\JackHearts.png" />
-    <Resource Include="card_images\JackSpades.png" />
-    <Resource Include="card_images\KingClubs.png" />
-    <Resource Include="card_images\KingDiamonds.png" />
-    <Resource Include="card_images\KingHearts.png" />
-    <Resource Include="card_images\KingSpades.png" />
-    <Resource Include="card_images\NineClubs.png" />
-    <Resource Include="card_images\NineDiamonds.png" />
-    <Resource Include="card_images\NineHearts.png" />
-    <Resource Include="card_images\NineSpades.png" />
-    <Resource Include="card_images\QueenClubs.png" />
-    <Resource Include="card_images\QueenDiamonds.png" />
-    <Resource Include="card_images\QueenHearts.png" />
-    <Resource Include="card_images\QueenSpades.png" />
-    <Resource Include="card_images\SevenClubs.png" />
-    <Resource Include="card_images\SevenDiamonds.png" />
-    <Resource Include="card_images\SevenHearts.png" />
-    <Resource Include="card_images\SevenSpades.png" />
-    <Resource Include="card_images\SixClubs.png" />
-    <Resource Include="card_images\SixDiamonds.png" />
-    <Resource Include="card_images\SixHearts.png" />
-    <Resource Include="card_images\SixSpades.png" />
-    <Resource Include="card_images\TenClubs.png" />
-    <Resource Include="card_images\TenDiamonds.png" />
-    <Resource Include="card_images\TenHearts.png" />
-    <Resource Include="card_images\TenSpades.png" />
-    <Resource Include="card_images\ThreeClubs.png" />
-    <Resource Include="card_images\ThreeDiamonds.png" />
-    <Resource Include="card_images\ThreeHearts.png" />
-    <Resource Include="card_images\ThreeSpades.png" />
+    <Content Include="card_images\AceClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\AceDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\AceHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\AceSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\cardback.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\DeuceClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\DeuceDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\DeuceHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\DeuceSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\EightClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\EightDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\EightHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\EightSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\FiveClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\FiveDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\FiveHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\FiveSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\FourClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\FourDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\FourHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\FourSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\JackClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\JackDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\JackHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\JackSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\KingClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\KingDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\KingHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\KingSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\NineClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\NineDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\NineHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\NineSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\QueenClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\QueenDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\QueenHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\QueenSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\SevenClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\SevenDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\SevenHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\SevenSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\SixClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\SixDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\SixHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\SixSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\TenClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\TenDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\TenHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\TenSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\ThreeClubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\ThreeDiamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\ThreeHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_images\ThreeSpades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cards.txt">
